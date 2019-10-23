@@ -13,7 +13,7 @@ class App
 			$this->controller = $url[0];
 			unset($url[0]);
 		}
-		require_once 'app/controllers/' . $this->controller . '.php';
+		require_once '../app/controllers/' . $this->controller . '.php';
 
 		$this->controller = new $this->controller;
 		if(isset($url[1]))
@@ -31,9 +31,9 @@ class App
 
 	protected function parseUrl()
 	{
-		if(isset($_GET['route']))
+		if(isset($_GET['req']))
 		{
-			return explode('/', filter_var(rtrim($_GET['route'], '/'), FILTER_SANITIZE_URL));
+		    return $req = explode('/',filter_var(rtrim($_GET['req'],'/'),FILTER_SANITIZE_URL));
 		}
 	}
 }

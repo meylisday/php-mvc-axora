@@ -13,6 +13,6 @@ class Home extends Controller
 		$data = [
 			'students' => $students
 		];
-		return $this->view('home/index', $data);
+		$this->view('home/index', $data);
 	}
 }
